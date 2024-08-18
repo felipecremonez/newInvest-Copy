@@ -1,0 +1,392 @@
+/* Estilos Gerais */
+*{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    size: 20px 25px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.logo img{
+
+  width: 250px;
+
+
+}
+
+.logo:hover{
+    border-radius: 8px;
+    background-color: rgba(97, 97, 97, 0.438);
+    transform: translateY(-5px);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.nav-links li a{
+    transition: 0.8s ease;
+    display: flex;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    color: #f4f4f4;
+}
+
+.nav-links li a:hover{
+
+    background-color: rgba(128, 128, 128, 0.699);
+    border-radius: 8px;
+    font-size: 18px;
+
+}
+
+/*aba de estilização do carrosel*/
+.carousel {
+    width: 100%;
+    height: 400px;
+    position: relative;
+  }
+  
+  .slides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .navigation {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navigation label {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  #slide1:checked ~ .slides .slide:nth-child(1),
+  #slide2:checked ~ .slides .slide:nth-child(2),
+  #slide3:checked ~ .slides .slide:nth-child(3) {
+    display: block;
+  }
+
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+/* Seções */
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.home-section {
+  font-size: large;
+    color: black;
+    padding: 6rem 2rem;
+    background-color: rgba(167, 170, 163, 0.63);
+    background-size: cover;
+}
+
+.about-section, .funds-section, .contact-section {
+    background-color: #f4f4f4;
+}
+
+
+.funds-section .fund-card h3{
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+
+.funds-section .fund-card h3 a{
+  color: #f1f1f1;
+  font-size: 24px;
+  margin-bottom: 50px;
+  text-decoration: none;
+
+}
+
+.funds-section .fund-card h3:hover{
+
+  transform: translateY(-7px);
+}
+.funds-section .fund-card h3:hover > a {
+  
+  
+  color: rgb(4, 231, 4);
+}
+
+
+
+
+/*Tooltip*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #282828;
+  color: #f1f1f1;
+  padding: 1em 3em;
+  border-radius: 1em;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #28282817;
+  color: #282828;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #28282817 transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+
+
+
+/* Seção de Contato */
+/* Estilos para a seção de contato */
+
+
+
+#contact {
+    background-color: rgba(0, 0, 0, 0.329);
+    background-size: cover; /* ajusta a imagem para cobrir todo o contêiner */
+    background-repeat: no-repeat; /* impede a repetição da imagem */
+    background-position: center; /* posiciona a imagem no centro do contêiner */
+    padding: 50px 20px;
+}
+#contact h2 {
+    text-align: center;
+    color: black;
+}
+#contact p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+}
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+
+}
+
+
+
+/* Estilização do Botão de enviar*/ 
+
+button {
+  margin-top: 20px;
+  width: 150px;
+  height: 60px;
+  border: 3px solid #315dfd96;
+  border-radius: 45px;
+  transition: all 0.6s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+
+  background-color: rgba(167, 170, 163, 0.842);
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+
+
+.fund-card {
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: -95px;
+        top: 100px;
+        transition: all 0.3s ease;
+        flex-direction: column;
+
+        background-color: #f1f1f1;
+        padding: 5px;
+
+        border-radius: 7px;
+    }
+
+    .nav-links li a {
+      color: #363636;
+    }
+
+    .nav-links.active {
+      right: 35px;
+    }
+
+    .burger { display: block; }
+}
+
+
+
+
+.loading svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: #ff4d5033;
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: #ff4d4f;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
