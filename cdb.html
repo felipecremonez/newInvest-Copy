@@ -48,7 +48,24 @@
 
     Já no CDB pré-fixado, a rentabilidade é definida no momento do contrato e não está indexado a nenhum índice.
             </h2>
+        </section>
             
+           
+            <!-- <label class="switch">
+                <div class="toggle-switch">
+                    <input id="switch" type="checkbox" />
+            <label for="switch"></label>
+                </div>
+            </label> -->
+
+            <div class="infoCDBbtn">
+                    <button class="btn" onClick="window.open('', '_blank')">
+                        <span class="text-container">
+                        <span class="text">Em quanto tempo terei o valor X?</span>
+                        </span>
+                    </button>
+            </div>
+        <div class="infoCDB">
             <div class="inputs">
                 <label for="investment">Valor do Investimento:</label>
                 <input type="number" id="investment" placeholder="Valor do investimento" />
@@ -60,10 +77,11 @@
                 <input type="number" id="years" placeholder="Tempo em anos" />
                 <button onclick="updateChart()">Calcular</button>
             </div>
-            
+        
             <canvas id="cdbChart" width="400" height="200"></canvas>
         </section>
     </div>
+            </div>
     
 
     <footer>

@@ -1,0 +1,9 @@
+regra 72 - valor aprox.
+
+tempo ~ 72/(rendimento * 100)
+
+
+
+form tempo
+
+tempo = log[1 + taxaJuros](valor final / valor inicial)		
