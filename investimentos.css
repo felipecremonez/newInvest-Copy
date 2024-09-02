@@ -151,7 +151,7 @@ footer p {
 }
 
 
-/* From Uiverse.io by doniaskima */ 
+/* From Uiverse.io by doniaskima 
 .containerInfoCDB .infoCDBbtn .btn,
 .containerInfoCDB .infoCDBbtn .btn *,
 .containerInfoCDB .infoCDBbtn .btn :after,
@@ -290,4 +290,39 @@ footer p {
   to {
     transform: translateY(0);
   }
+} */
+
+.contentOpcoes{
+
+  padding: 3% 15%;
+ 
 }
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 50%; 
+  border-radius: 10px; 
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+  border-radius: 10px 10px 0px 0px; 
+}
+
+#valor {background-color: rgba(8, 212, 59, 0.904);}
+#tempo {background-color:rgb(5, 148, 5);}

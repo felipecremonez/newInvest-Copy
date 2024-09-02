@@ -32,7 +32,8 @@
             <div class="service">
                 <img src="img/apertodemão.avif" alt="CDB">
                 <h2>Confiança para investir</h2>
-                <p>Aqui você pode depositar sua confiança simular seu investimento conosco, nas melhores opções do mercado atual.</p>
+                <p>Aqui você pode depositar sua confiança simular seu investimento conosco, <br>
+                    nas melhores opções do mercado atual.</p>
             </div>
         </section>
     </div>
@@ -46,7 +47,7 @@
             <h2>
                 A rentabilidade do CDB em 2024 irá depender da porcentagem do CDI, percentual que pode ser de 90%, 100%, 102%, ou seja, inúmeras variações. Em julho de 2024, a remuneração do CDB (Certificado de Depósito Bancário) está elevada porque a Taxa Selic está em 10,50% e o investimento é atrelado ao CDI (Certificado de Depósito Interbancário), que chegou a 10,40%. 
 
-    Já no CDB pré-fixado, a rentabilidade é definida no momento do contrato e não está indexado a nenhum índice.
+                Já no CDB pré-fixado, a rentabilidade é definida no momento do contrato e não está indexado a nenhum índice.
             </h2>
         </section>
             
@@ -58,14 +59,74 @@
                 </div>
             </label> -->
 
-            <div class="infoCDBbtn">
+
+
+
+            <!-- Button bonitinho -->
+            <!-- <div class="infoCDBbtn">
                     <button class="btn" onClick="window.open('', '_blank')">
                         <span class="text-container">
                         <span class="text">Em quanto tempo terei o valor X?</span>
                         </span>
                     </button>
-            </div>
-        <div class="infoCDB">
+            </div> -->
+
+
+
+<div class="contentOpcoes">
+<div id="valor" class="tabcontent">
+  <h1>Quanto terei com X valor?</h1>
+  <p>Desta forma, você consegue simular o valor que terá em determinado tempo:</p>
+</div>
+
+<div id="tempo" class="tabcontent">
+  <h1>Quanto terei em X tempo?</h1>
+  <p>Desta forma, você consegue simular quanto tempo demorará para ter determinado valor:</p>
+</div>
+
+<button class="tablink" onclick="handleAbaValor(this)" id="defaultOpen">VALOR</button>
+<button id="abaTempo" class="tablink" onclick="handleAbaTempo(this)">TEMPO</button>
+
+</div> <!-- Finaliza a div da classe "contentOpcoes" -->
+
+
+<script>
+function handleAbaTempo(target){
+    openTab('tempo', target, 'darkgrey')
+    const infoCDB = document.getElementById('infoCDB')
+
+    infoCDB.style.display = 'none'
+}
+function handleAbaValor(target){
+    openTab('valor', target, 'darkgrey')
+    const infoCDB = document.getElementById('infoCDB')
+
+    infoCDB.style.display = 'block'
+}
+
+
+
+// Estilização de mudança de aba(valor e tempo)
+
+function openTab(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+        <div id="infoCDB" class="infoCDB">
             <div class="inputs">
                 <label for="investment">Valor do Investimento:</label>
                 <input type="number" id="investment" placeholder="Valor do investimento" />
@@ -79,10 +140,27 @@
             </div>
         
             <canvas id="cdbChart" width="400" height="200"></canvas>
-        </section>
-    </div>
+        </div>
+
+
+
+
+        <!-- Valor  -->
+
+        <div id="infoCDB" class="infoCDB">
+            <div class="inputs">
+
+                <label for="valorInvestimento">Valor do Investimento:</label>
+                <input type="number" id="investment" placeholder="Valor do investimento" />
+                <label for="cdiTaxa">Taxa do CDI:</label>
+                <input type="number" id="cdbPorcentagem" placeholder="Taxa do CDI" />
+                <label for="cdbPorcentagem">Rendimento do CDB (%):</label>
+                <input type="number" id="cdbPercentage" placeholder="Rendimento do CDB" />
+                <label for="valorDesejado">Valor desejado:</label>
+                <input type="number" id="valorDesejado" placeholder="Qual o valor desejado com o investimento?" />
             </div>
-    
+        </div>
+
 
     <footer>
         <div class="container">
@@ -151,6 +229,12 @@
                 }
             }
         });
+
+
+        // Cálculo para descobrir a quantidade de tempo para atingir um valor X:
+        function ValorFuturo(){
+            
+        }
     </script>
 </body>
 </html>
