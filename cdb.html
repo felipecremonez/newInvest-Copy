@@ -39,7 +39,7 @@
     </div>
 
     <div class="containerInfoCDB">
-        <section class="infoCDB">
+        <section id="infoCDB">
             <h2>
                 O CDB é um título de renda fixa emitido por bancos e instituições financeiras. Funciona como um empréstimo que o investidor faz ao banco. Em troca, 
                 o banco se compromete a devolver o valor aplicado acrescido de juros em uma data futura. A remuneração pode ser prefixada, pós-fixada ou híbrida.
@@ -131,7 +131,7 @@ document.getElementById("defaultOpen").click();
                 <label for="investment">Valor do Investimento:</label>
                 <input type="number" id="investment" placeholder="Valor do investimento" />
                 <label for="cdbValor">Taxa do CDI:</label>
-                <input type="number" id="cdiPorcentage" placeholder="Taxa do CDI" />
+                <input type="number" id="cdbValor" placeholder="Taxa do CDI" />
                 <label for="cdbPercentage">Rendimento do CDB (%):</label>
                 <input type="number" id="cdbPercentage" placeholder="Rendimento do CDB" />
                 <label for="years">Tempo (anos):</label>
@@ -151,13 +151,14 @@ document.getElementById("defaultOpen").click();
             <div class="inputs">
 
                 <label for="valorInvestimento">Valor do Investimento:</label>
-                <input type="number" id="investment" placeholder="Valor do investimento" />
+                <input type="number" id="valorInvestimento" placeholder="Valor do investimento" />
                 <label for="cdiTaxa">Taxa do CDI:</label>
-                <input type="number" id="cdbPorcentagem" placeholder="Taxa do CDI" />
+                <input type="number" id="cdiTaxa" placeholder="Taxa do CDI" />
                 <label for="cdbPorcentagem">Rendimento do CDB (%):</label>
-                <input type="number" id="cdbPercentage" placeholder="Rendimento do CDB" />
+                <input type="number" id="cdbPorcentagem" placeholder="Rendimento do CDB" />
                 <label for="valorDesejado">Valor desejado:</label>
                 <input type="number" id="valorDesejado" placeholder="Qual o valor desejado com o investimento?" />
+                <button onclick="updateValue()">Calcular</button>
             </div>
         </div>
 
@@ -169,6 +170,23 @@ document.getElementById("defaultOpen").click();
     </footer>
 
     <script>
+
+        // função para calcular a quantidade de tempo para atingir o valor X
+
+        const calcularTempo = (cdiTaxa, valorDesejado, valorInvestimento) => {
+        return Math.log(valorDesejado / valorInvestimento) / Math.log(1 + cdiTaxa);
+        }
+
+        const cdiTaxa = parseInt(document.getElementById('cdiTaxa').value,10); // Taxa
+        const valorFinal =  parseInt(document.getElementById('valorDesejado').value,10); // Valor final
+        const valorInicial =  parseInt(document.getElementById('valorInvestimento').value,10); // Valor Investido inicialmente
+        const tempo = calcularTempo(cdiTaxa, valorFinal, valorInicial);
+        
+
+
+        // ----------------------------------------------------------------------------------------------------------
+
+
 
         function calculateRate(cdiRate, cdbRate){
 
@@ -231,9 +249,27 @@ document.getElementById("defaultOpen").click();
         });
 
 
+
+        // const calcularTempo = (cdiTaxa, valorDesejado, valorInvestimento) => {
+        // return Math.log(valorDesejado / valorInvestimento) / Math.log(1 + cdiTaxa);
+        // }
+
+        // const cdiTaxa = parseInt(document.getElementById('cdiTaxa').value,10); // Taxa
+        // const valorFinal =  parseInt(document.getElementById('valorDesejado').value,10); // Valor final
+        // const valorInicial =  parseInt(document.getElementById('valorInvestimento').value,10); // Valor Investido inicialmente
+        // const tempo = calcularTempo(cdiTaxa, valorFinal, valorInicial);
+        
+
         // Cálculo para descobrir a quantidade de tempo para atingir um valor X:
-        function ValorFuturo(){
-            
+        function updateValue() {
+            const valorInvestimento = parseFloat(document.getElementById('valorInvestimento').value);
+            const cdiTaxa = parseFloat(document.getElementById('cdiTaxa').value);
+            const valorDesejado = parseFloat(document.getElementById('valorDesejado').value);
+
+            if (isNaN(investment) || isNaN(CDIRate) || isNaN(CDBRate) || isNaN(years)) {
+                alert('Por favor, insira valores válidos.');
+                return;
+            }
         }
     </script>
 </body>
